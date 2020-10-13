@@ -29,9 +29,9 @@ public class SampleTest {
     driver.get(cfg.url());
     logger.info("Открыта страница Отус");
 
-    if (driver.findElement(By.cssSelector("[title='help@otus.ru']")).isDisplayed()) {
-      logger.info("Заголовок 'help@otus.ru' присутствует");
-    }
+    if (driver.findElement(By.xpath("//title[contains( text(),'Онлайн‑курсы для профессионалов, дистанционное обучение современным профессиям')]")).isEnabled()) {
+      logger.info("Title появился");
+    } else throw new AssertionError("Title не появился");
   }
 
   @After
