@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 
 import static application.WebDriverFactory.wdChrome;
 import static application.appManager.logger;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class YandexTest extends YandexTestBase {
 
@@ -67,6 +68,6 @@ public class YandexTest extends YandexTestBase {
     logger.info("Произошел переход на страницу сравнения");
     saveFile(takeScreenShot());
     int goodsAmount = wdChrome.findElements(By.xpath(locatorElementsOnComparePage)).size();
-    Assertions.assertEquals(2, goodsAmount);
+    assertEquals(2, goodsAmount);
   }
 }
