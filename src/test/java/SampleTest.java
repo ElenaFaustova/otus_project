@@ -3,9 +3,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +16,7 @@ public class SampleTest {
   ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
 
 
-  @Before
+  @BeforeEach
   public void setUP() {
     WebDriverManager.chromedriver().setup();
     driver = new ChromeDriver();
@@ -34,7 +34,7 @@ public class SampleTest {
     } else throw new AssertionError("Title не появился");
   }
 
-  @After
+  @AfterEach
   public void setDown() {
     if (driver != null) {
       driver.quit();
