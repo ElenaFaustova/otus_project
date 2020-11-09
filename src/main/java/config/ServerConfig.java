@@ -8,4 +8,13 @@ public interface ServerConfig extends Config {
 
   @Key("url")
   String url();
+
+  @Key("email")
+  String email();
+
+  @Key("password")
+  String password();
+
+  @Key("urlUserDetails")
+  String urlUserDetails();
 }

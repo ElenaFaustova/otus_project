@@ -21,7 +21,6 @@ public class SampleTest {
     WebDriverManager.chromedriver().setup();
     driver = new ChromeDriver();
     logger.info("Драйвер поднят");
-
   }
 
   @Test
