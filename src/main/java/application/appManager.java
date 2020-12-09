@@ -8,5 +8,5 @@ import org.apache.logging.log4j.Logger;
 public class appManager {
 
   public static Logger logger = LogManager.getLogger(appManager.class);
-  ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
+  public static ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
 }

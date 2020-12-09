@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -7,7 +6,6 @@ import static application.appManager.logger;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class YandexTest extends YandexTestBase {
-
 
   private String firstMark = "Samsung";
   private String secondMark = "Xiaomi";
