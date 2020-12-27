@@ -2,9 +2,6 @@ package steps;
 
 import cucumber.api.java.en.And;
 import lombok.extern.log4j.Log4j2;
-import static application.WebDriverFactory.wdChrome;
-import static application.appManager.cfg;
-import static application.appManager.logger;
 
 import static pages.PageObject.loginPage;
 
