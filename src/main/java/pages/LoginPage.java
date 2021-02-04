@@ -43,17 +43,17 @@ public class LoginPage {
     return this;
   }
 
-  private LoginPage fillEmail(String text) {
+  public LoginPage fillEmail(String text) {
     wait.until(visibilityOf(email)).sendKeys(text);
     return this;
   }
 
-  private LoginPage fillPassword(String text) {
+  public LoginPage fillPassword(String text) {
     password.sendKeys(text);
     return this;
   }
 
-  private LoginPage submitLogin() {
+  public LoginPage submitLogin() {
     submit.click();
     return this;
   }
