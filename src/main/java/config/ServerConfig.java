@@ -9,6 +9,9 @@ public interface ServerConfig extends Config {
   @Key("url")
   String url();
 
+  @Key("apiUrlSwagger")
+  String apiUrlSwagger();
+
   @Key("email")
   String email();
 
