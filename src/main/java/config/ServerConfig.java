@@ -12,6 +12,9 @@ public interface ServerConfig extends Config {
   @Key("apiUrlSwagger")
   String apiUrlSwagger();
 
+  @Key("selenoidUrl")
+  String selenoidUrl();
+
   @Key("email")
   String email();
 
