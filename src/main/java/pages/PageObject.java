@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 import static application.WebDriverFactory.wdChrome;
-import static application.appManager.logger;
+import static application.AppManager.logger;
 
 public class PageObject {
 

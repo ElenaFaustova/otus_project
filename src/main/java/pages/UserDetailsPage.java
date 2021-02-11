@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import static application.WebDriverFactory.wdChrome;
-import static application.appManager.cfg;
-import static application.appManager.logger;
+import static application.AppManager.cfg;
+import static application.AppManager.logger;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 import static pages.PageObject.wait;
 

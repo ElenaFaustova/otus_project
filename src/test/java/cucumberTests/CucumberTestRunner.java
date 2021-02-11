@@ -10,5 +10,5 @@ import org.junit.runner.RunWith;
         features="src/test/resources/features",
         tags = "@otus_open_main_page_test"
 )
-public class cucumberTest {
+public class CucumberTestRunner {
 }
