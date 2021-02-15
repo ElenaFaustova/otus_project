@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 
 import static application.WebDriverFactory.wdChrome;
-import static application.appManager.logger;
+import static application.AppManager.logger;
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 import static pages.PageObject.wait;
 

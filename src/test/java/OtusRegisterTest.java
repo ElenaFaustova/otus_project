@@ -2,8 +2,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import static application.WebDriverFactory.wdChrome;
-import static application.appManager.cfg;
-import static application.appManager.logger;
+import static application.AppManager.cfg;
+import static application.AppManager.logger;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static pages.PageObject.*;
 

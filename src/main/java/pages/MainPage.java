@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import static application.WebDriverFactory.wdChrome;
-import static application.appManager.cfg;
-import static application.appManager.logger;
+import static application.AppManager.cfg;
+import static application.AppManager.logger;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 import static pages.PageObject.*;
 
@@ -23,12 +23,20 @@ public class MainPage {
   @FindBy(xpath = "//*[@class='header2-menu__item-wrapper header2-menu__item-wrapper__username']")
   private WebElement userIcon;
 
+  @FindBy(xpath = "//*[@href='/contacts/']")
+  private WebElement contacts;
+
   @FindBy(xpath = "//*[@title='Выход']")
   private WebElement logout;
 
   public MainPage isPage() {
     wait.until(visibilityOf(userIcon)).isEnabled();
     logger.info("Пользователь авторизован и находится на главной странице.");
+    return this;
+  }
+
+  public MainPage openContacts(){
+    wait.until(visibilityOf(contacts)).click();
     return this;
   }
 

@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
 import static application.WebDriverFactory.wdChrome;
-import static application.appManager.logger;
+import static application.AppManager.logger;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class YandexTest extends YandexTestBase {

@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import static application.WebDriverFactory.wdChrome;
-import static application.appManager.cfg;
-import static application.appManager.logger;
+import static application.AppManager.cfg;
+import static application.AppManager.logger;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 import static pages.PageObject.wait;
 
@@ -38,22 +38,22 @@ public class LoginPage {
     return this;
   }
 
-  private LoginPage openRegisterForm() {
+  public LoginPage openRegisterForm() {
     wait.until(visibilityOf(enter)).click();
     return this;
   }
 
-  private LoginPage fillEmail(String text) {
+  public LoginPage fillEmail(String text) {
     wait.until(visibilityOf(email)).sendKeys(text);
     return this;
   }
 
-  private LoginPage fillPassword(String text) {
+  public LoginPage fillPassword(String text) {
     password.sendKeys(text);
     return this;
   }
 
-  private LoginPage submitLogin() {
+  public LoginPage submitLogin() {
     submit.click();
     return this;
   }
