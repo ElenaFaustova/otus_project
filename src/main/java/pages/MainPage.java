@@ -23,12 +23,20 @@ public class MainPage {
   @FindBy(xpath = "//*[@class='header2-menu__item-wrapper header2-menu__item-wrapper__username']")
   private WebElement userIcon;
 
+  @FindBy(xpath = "//*[@href='/contacts/']")
+  private WebElement contacts;
+
   @FindBy(xpath = "//*[@title='Выход']")
   private WebElement logout;
 
   public MainPage isPage() {
     wait.until(visibilityOf(userIcon)).isEnabled();
     logger.info("Пользователь авторизован и находится на главной странице.");
+    return this;
+  }
+
+  public MainPage openContacts(){
+    wait.until(visibilityOf(contacts)).click();
     return this;
   }
 

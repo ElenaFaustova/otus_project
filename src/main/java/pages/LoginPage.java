@@ -38,7 +38,7 @@ public class LoginPage {
     return this;
   }
 
-  private LoginPage openRegisterForm() {
+  public LoginPage openRegisterForm() {
     wait.until(visibilityOf(enter)).click();
     return this;
   }

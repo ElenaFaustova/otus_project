@@ -1,30 +1,29 @@
 package steps;
 
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 
+import static application.AppManager.cfg;
 import static application.WebDriverFactory.wdChrome;
-import static application.AppManager.logger;
-import static pages.PageObject.loginPage;
-import static pages.PageObject.userDetailsPage;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static pages.PageObject.*;
 
 @Log4j2
 public class OtusSteps {
 
-  @Given("^user opens main page$")
+  @Given("^user opens main page")
   public void openMainPage() {
     loginPage.open();
-    if (wdChrome.findElement(By.xpath("//title[contains( text(),'Онлайн‑курсы для профессионалов, дистанционное обучение современным профессиям')]")).isEnabled()) {
-      logger.info("Title появился");
-    } else throw new AssertionError("Title не появился");
+    assertTrue(wdChrome.findElement(By.xpath("//title[contains( text(),'Онлайн‑курсы для профессионалов, дистанционное обучение современным профессиям')]")).isEnabled(),
+            "Title не появился");
   }
 
-  @Given("^user opens UserDetails page$")
-  public void openUserDetailsPage() {
-    userDetailsPage.open();
+  @Given("^user opens RegisterForm")
+  public void openRegForm() {
+    loginPage.openRegisterForm();
   }
 
   @When("^user fills login \"([^\"]*)\"$")
@@ -34,7 +33,7 @@ public class OtusSteps {
 
   @When("^user fills password \"([^\"]*)\"$")
   public void fillPass(String password) {
-    loginPage.fillEmail(password);
+    loginPage.fillPassword(password);
   }
 
   @When("^user submits login")
@@ -44,8 +43,9 @@ public class OtusSteps {
 
   @When("^user do login with email: \"([^\"]*)\" and password: \"([^\"]*)\"$")
   public void login(String email, String password) {
+    loginPage.openRegisterForm();
     loginPage.fillEmail(email);
-    loginPage.fillEmail(password);
+    loginPage.fillPassword(password);
     loginPage.submitLogin();
   }
 
@@ -60,8 +60,17 @@ public class OtusSteps {
   }
 
   @When("^user submits user parameter changes")
-  public void submitUserParamChanges(){
+  public void submitUserParamChanges() {
     userDetailsPage.saveForm();
   }
 
+  @When("^user opens contacts")
+  public void clickContacts() {
+    mainPage.openContacts();
+  }
+
+  @Then("^user checks that text 'Реквизиты' exists")
+  public void checkPhone() {
+    wdChrome.findElement(By.xpath("//div[contains(text(), 'Реквизиты')]")).isEnabled();
+  }
 }

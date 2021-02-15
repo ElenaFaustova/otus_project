@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         glue = "steps",
         features="src/test/resources/features",
-        tags = "@otus_open_main_page_test"
+        tags = "@otus_open_contacts"
 )
 public class CucumberTestRunner {
 }
